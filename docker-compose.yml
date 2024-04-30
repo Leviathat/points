@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+
+    ports:
+      - "27017:27017"
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
