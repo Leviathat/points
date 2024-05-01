@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  db:
+  mongodb:
     build:
       context: ./db
       dockerfile: Dockerfile
@@ -13,3 +13,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
